@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.spp.todolist.dao.TodoDao;
-import com.spp.todolist.dto.Role;
+
 import com.spp.todolist.dto.Todo;
 import com.spp.todolist.util.Constant;
 

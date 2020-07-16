@@ -1,30 +1,30 @@
 package com.spp.todolist.dto;
 
 public class Todo {
-	private String thingToDo;
-	private String whoToDo;
+	private String thing;
+	private String name;
 	private int priority;
 	private int id;
 	
 	public Todo(String thingToDo, String whoToDo, int priority,int id) {
 		super();
-		this.thingToDo = thingToDo;
-		this.whoToDo = whoToDo;
+		this.thing = thingToDo;
+		this.name = whoToDo;
 		this.priority = priority;
 		this.id=id;
 	}
 	
 	public String getThingToDo() {
-		return thingToDo;
+		return thing;
 	}
 	public void setThingToDo(String thingToDo) {
-		this.thingToDo = thingToDo;
+		this.thing = thingToDo;
 	}
 	public String getWhoToDo() {
-		return whoToDo;
+		return name;
 	}
 	public void setWhoToDo(String whoToDo) {
-		this.whoToDo = whoToDo;
+		this.name = whoToDo;
 	}
 	public int getPriority() {
 		return priority;
@@ -41,7 +41,7 @@ public class Todo {
 
 	@Override
 	public String toString() {
-		return "Todo [thingToDo=" + thingToDo + ", whoToDo=" + whoToDo + ", priority=" + priority + ", id=" + id + "]";
+		return "Todo [thingToDo=" + thing + ", whoToDo=" + name + ", priority=" + priority + ", id=" + id + "]";
 	}
 	
 	
