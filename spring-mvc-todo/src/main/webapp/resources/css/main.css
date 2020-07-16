@@ -1,0 +1,69 @@
+
+li{
+    display: list-item;
+}
+body{
+    background-color:#EAEAEA;
+
+}
+
+section{
+	padding-top: 30px;
+background-color:white ;
+margin-left: 17%;
+margin-right: 17%;
+	
+}
+.newtodoform{
+	text-align:right;
+}
+.newtodo{
+	margin-right:10px;
+}
+#project-app .depth01 > li{
+  
+    margin-right: 10px;
+    width:33%
+    
+    
+}
+#project-app{
+	width:90%;
+	margin:0;
+	
+	margin-left:10%;
+}
+.depth01 , .depth02{
+   padding: 0;
+    list-style: none;
+    margin:0;
+}
+.depth01{
+    display: flex;
+    
+}
+#app-block{
+    background-color : #85FFFF;
+       width: auto;
+}
+#title-block{
+    background-color : #3DB7CC;
+       
+}
+.data,h2{
+    margin : 0;
+    margin-bottom : 10px;
+    padding: 15px;
+}
+h2{
+	color:white;
+}
+p{
+	margin:0;
+}
+.titled{
+    font-size: 25px;
+}
+.subd{
+	font-size:13px;
+}
