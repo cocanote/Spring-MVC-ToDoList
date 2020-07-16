@@ -48,9 +48,7 @@ public class TodoDao implements ITodoDao{
 		
 		String sql ="SELECT title, name, sequence, id FROM todo order by id desc";
 		
-		
-
-		
+				
 		return (ArrayList<Todo>) template.query(sql, new BeanPropertyRowMapper<Todo>(Todo.class));
 }
 	

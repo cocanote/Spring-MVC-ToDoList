@@ -38,6 +38,7 @@ public class TodoController {
 	@RequestMapping("/main")
 	public String home(Model model) {
 		
+		System.out.println("todolist");
 		todoDao =new TodoDao();
 		ArrayList<Todo> todolist = todoDao.selectTodo();
 		for(Todo T: todolist) {
