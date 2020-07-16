@@ -1,4 +1,4 @@
-package com.spp.todolist;
+package com.spp.todolist.dto;
 
 public class Role {
 	private Integer roleId;

@@ -1,4 +1,4 @@
-package com.spp.todolist;
+package com.spp.todolist.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +10,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.validation.BeanPropertyBindingResult;
 
+import com.spp.todolist.dto.Role;
 import com.spp.todolist.util.Constant;
 
 
@@ -26,11 +27,13 @@ public class RoleDao {
 	}
 
 
-	public ArrayList<Role> getRoles(){ ArrayList<Role> Roles = null; 
-	String sql ="SELECT description, role_id FROM role order by role_id desc";
-	Roles=(ArrayList<Role>) template.query(sql, new BeanPropertyRowMapper<Role>(Role.class));
+	public ArrayList<Role> getRoles(){ 
 
-	return Roles; 
+		ArrayList<Role> Roles = null; 
+		String sql ="SELECT description, role_id FROM role order by role_id desc";
+		Roles=(ArrayList<Role>) template.query(sql, new BeanPropertyRowMapper<Role>(Role.class));
+
+		return Roles; 
 
 	}
 
