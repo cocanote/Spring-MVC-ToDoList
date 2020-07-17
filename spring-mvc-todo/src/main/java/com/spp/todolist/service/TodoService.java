@@ -3,21 +3,19 @@ package com.spp.todolist.service;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import com.spp.todolist.dao.TodoDao;
 import com.spp.todolist.dto.Todo;
-import com.spp.todolist.util.Constant;
 
 @Service
 public class TodoService implements ITodoService{
 
 	TodoDao todoDao;
-	
+
 
 	public TodoService() {
-		
+
 	}
 
 	@Autowired
@@ -26,7 +24,8 @@ public class TodoService implements ITodoService{
 	}
 
 	@Override
-	public void registerTodo(String thing, String name, String priority, String id) {
+	public void registerTodo(String thing, String name, String priority) {
+		todoDao.insertTodo(thing,name,priority);
 
 	}
 
@@ -35,12 +34,10 @@ public class TodoService implements ITodoService{
 
 		return todoDao.selectTodo();
 	}
-	public String getTest() {
-		return todoDao.getTest();
-	}
 
-	
 
-	
-	
+
+
+
+
 }

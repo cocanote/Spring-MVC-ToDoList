@@ -10,25 +10,25 @@
 <body>
 
 	<section> 
-		<form action = "MainServlet" accept-charset="utf-8"  method = "post">
+		<form action = "reg" accept-charset="utf-8"  method = "get">
 			<H2>할일 등록</H2>
 			<div class="add_secttion">
 				<div class="put_info">
 					<div>어떤일인가요?</div>
 
 					<input class="work" type="text" placeholder="할일을 입력해주세요" id="work"
-						name="thingTodo" maxlength="24">
+						name="thing" maxlength="24">
 				</div>
 				<div class="put_info">
 					<div>누가 할일인가요?</div>
 					<input class="work" type="text" placeholder="누가 할일인지 알려주세요 "
-						id="who" name="whoToDo" maxlength="24">
+						id="who" name="name" maxlength="24">
 				</div>
 				<div class="put_info">
 					<div>우선순위를 선택하세요</div>
-					<input type="radio" value="1" name="priority">1순위 <input
-						type="radio" value="2" name="priority">2순위 <input
-						type="radio" value="3" name="priority">3순위
+					<input type="radio" value="1" name="sequence">1순위 <input
+						type="radio" value="2" name="sequence">2순위 <input
+						type="radio" value="3" name="sequence">3순위
 				</div>
 			</div>
 			

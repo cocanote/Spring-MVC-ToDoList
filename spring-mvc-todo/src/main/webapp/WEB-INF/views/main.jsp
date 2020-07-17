@@ -14,7 +14,7 @@
 <body>
 	<section>
 		<div id="button-app">
-			<form action="MainServlet" accept-charset="utf-8" method="post"
+			<form action="adtodo" accept-charset="utf-8" method="post"
 				class="newtodoform">
 				<input class="newtodo" type="submit" value="새로운 todo 등록"
 					name="newtodo">
@@ -34,7 +34,8 @@
 										<li>
 											<div class="data" id="app-block">
 												<p class="titled">${item.title}</p>
-												<p class="subd">${item.name},${item.sequence}</p>
+												<p class="subd">등록날자 :${item.regdate} ${item.name}. 우선순위 ${item.sequence}												
+												</p>
 											</div>
 										</li>
 									</c:if>
@@ -53,7 +54,7 @@
 										<li>
 											<div class="data" id="app-block">
 												<p class="titled">${item.title}</p>
-												<p class="subd">${item.name},${item.sequence}</p>
+												<p class="subd">등록날자 :${item.regdate} ${item.name}. 우선순위 ${item.sequence}</p>
 											</div>
 										</li>
 									</c:if>
@@ -72,7 +73,7 @@
 										<li>
 											<div class="data" id="app-block">
 												<p class="titled">${item.title}</p>
-												<p class="subd">${item.name},${item.sequence}</p>
+												<p class="subd">등록날자 :${item.regdate} ${item.name}. 우선순위 ${item.sequence}</p>
 											</div>
 										</li>
 									</c:if>

@@ -1,10 +1,12 @@
 package com.spp.todolist.dao;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementSetter;
 import org.springframework.stereotype.Repository;
 
 import com.spp.todolist.dto.Todo;
@@ -16,43 +18,34 @@ public class TodoDao implements ITodoDao{
 
 	JdbcTemplate template =null;
 	private ArrayList<Todo> todos;
-	
-	String test;
-	
-	public String getTest() {
-		return test;
-	}
+
 	public TodoDao() {
-		test="please";
+
 	}
-	
+
 	@Override
-	public void insertTodo(Todo td){
-		
-		/*
-		 * try { Class.forName("com.mysql.jdbc.Driver");
-		 * 
-		 * } catch (ClassNotFoundException e) { e.printStackTrace(); } String sql =
-		 * "INSERT INTO todo (title, name, sequence) VALUES(?, ?, ?)";
-		 * 
-		 * try (Connection conn = DriverManager.getConnection(dbUrl, dbUser, dbPasswd);
-		 * PreparedStatement ps = conn.prepareStatement(sql)){ ps.setString(1 ,
-		 * td.getThingToDo()); ps.setString(2 , td.getWhoToDo()); ps.setInt(3 ,
-		 * td.getPriority()); ps.executeUpdate();
-		 * 
-		 * 
-		 * }catch (Exception ex) { ex.printStackTrace();
-		 * 
-		 * }
-		 */
-}
+	public void insertTodo(final String thing,final String name,final String priority){
+		template= Constant.template;
+		String sql="INSERT INTO todo (title,name,sequence) VALUES (?,?,?)";
+		template.update(sql, new PreparedStatementSetter() {
+
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				// TODO Auto-generated method stub
+				ps.setString(1, thing);
+				ps.setString(2, name);
+				ps.setString(3, priority);
+			}
+
+		});
+	}
 	@Override
 	public ArrayList<Todo> selectTodo(){
 		template= Constant.template;
-		
+
 		String sql ="SELECT title, name, sequence, id, type, regdate FROM todo order by id desc";						
 		todos=(ArrayList<Todo>) template.query(sql, new BeanPropertyRowMapper<Todo>(Todo.class));
 		return todos;
-}
-	
+	}
+
 }

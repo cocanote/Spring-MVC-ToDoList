@@ -8,6 +8,6 @@ import com.spp.todolist.dto.Todo;
 
 public interface ITodoService {
 
-	void registerTodo(String thing, String name, String priority, String id) ;
+	void registerTodo(String thing, String name, String priority) ;
 	ArrayList<Todo> readTodos();
 }
