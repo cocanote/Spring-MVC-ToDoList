@@ -46,13 +46,12 @@ public class TodoController {
 	public String home(Model model) {
 				
 		System.out.println("todolist");
-		System.out.println( todoService.getTest());
-		
 		ArrayList<Todo> todolist = todoService.readTodos();
-		for(Todo T: todolist) {
-			System.out.println(T.toString());
-		}		
 		model.addAttribute("list",todolist);
+		for(Todo T: todolist) {
+			System.out.println(T.getTitle());
+		}		
+		
 		return "main";
 	}
 

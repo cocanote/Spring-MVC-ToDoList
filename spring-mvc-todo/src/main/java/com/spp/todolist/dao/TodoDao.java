@@ -50,7 +50,7 @@ public class TodoDao implements ITodoDao{
 	public ArrayList<Todo> selectTodo(){
 		template= Constant.template;
 		
-		String sql ="SELECT title, name, sequence, id FROM todo order by id desc";						
+		String sql ="SELECT title, name, sequence, id, type, regdate FROM todo order by id desc";						
 		todos=(ArrayList<Todo>) template.query(sql, new BeanPropertyRowMapper<Todo>(Todo.class));
 		return todos;
 }
