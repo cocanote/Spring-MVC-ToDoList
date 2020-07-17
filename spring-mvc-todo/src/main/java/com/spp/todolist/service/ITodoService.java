@@ -1,4 +1,4 @@
-package comm.spp.todolist.service;
+package com.spp.todolist.service;
 
 import java.util.ArrayList;
 

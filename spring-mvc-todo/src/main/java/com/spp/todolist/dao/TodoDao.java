@@ -5,22 +5,25 @@ import java.util.List;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-
+import org.springframework.stereotype.Repository;
 
 import com.spp.todolist.dto.Todo;
 import com.spp.todolist.util.Constant;
 
 
-
+@Repository
 public class TodoDao implements ITodoDao{
 
-	
 	JdbcTemplate template =null;
+	private ArrayList<Todo> todos;
 	
+	String test;
 	
-	public TodoDao(){
-		template= Constant.template;
-
+	public String getTest() {
+		return test;
+	}
+	public TodoDao() {
+		test="please";
 	}
 	
 	@Override
@@ -45,11 +48,11 @@ public class TodoDao implements ITodoDao{
 }
 	@Override
 	public ArrayList<Todo> selectTodo(){
+		template= Constant.template;
 		
-		String sql ="SELECT title, name, sequence, id FROM todo order by id desc";
-		
-				
-		return (ArrayList<Todo>) template.query(sql, new BeanPropertyRowMapper<Todo>(Todo.class));
+		String sql ="SELECT title, name, sequence, id FROM todo order by id desc";						
+		todos=(ArrayList<Todo>) template.query(sql, new BeanPropertyRowMapper<Todo>(Todo.class));
+		return todos;
 }
 	
 }
