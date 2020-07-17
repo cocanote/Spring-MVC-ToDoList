@@ -35,6 +35,17 @@ public class TodoService implements ITodoService{
 		return todoDao.selectTodo();
 	}
 
+	@Override
+	public void modifyTodo(String id, String type) {
+
+		todoDao.updateTodo(id,type);
+	}
+
+	@Override
+	public void removeTodo(String id) {
+		todoDao.deleteTodo(id);
+	}
+
 
 
 

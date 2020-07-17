@@ -33,7 +33,7 @@
 			</div>
 			
 			<div class="buttons">
-				<input type="button" value="&lt이전">
+				<input type="button" value="&lt이전" onClick="history.go(-1)">
 				<input type="reset" value="내용지우기"> <input type="submit" name="addtodo">
 
 			</div>

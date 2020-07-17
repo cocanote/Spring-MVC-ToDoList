@@ -34,8 +34,16 @@
 										<li>
 											<div class="data" id="app-block">
 												<p class="titled">${item.title}</p>
-												<p class="subd">등록날자 :${item.regdate} ${item.name}. 우선순위 ${item.sequence}												
+												<p class="subd">등록날자 :${item.regdate} ${item.name}.
+													우선순위${item.sequence}
+												<form action="mod" accept-charset="utf-8" method="get"
+													class="modiform">
+													<input type="hidden" value=${item.id } name="id"> <input
+														type="hidden" value="DOING" name="type"> <input
+														class="modiB" type="submit" value="→" name=modi>
+												</form>
 												</p>
+
 											</div>
 										</li>
 									</c:if>
@@ -54,7 +62,15 @@
 										<li>
 											<div class="data" id="app-block">
 												<p class="titled">${item.title}</p>
-												<p class="subd">등록날자 :${item.regdate} ${item.name}. 우선순위 ${item.sequence}</p>
+												<p class="subd">등록날자 :${item.regdate} ${item.name}. 우선순위
+													${item.sequence}<form action="mod" accept-charset="utf-8" method="get"
+													class="modiform">
+													<input type="hidden" value=${item.id } name="id">
+													<input type="hidden" value="DONE" name="type">
+													<input class="modiB" type="submit" value="→" name=modi>
+												</form>
+													</p>
+												
 											</div>
 										</li>
 									</c:if>
@@ -73,7 +89,14 @@
 										<li>
 											<div class="data" id="app-block">
 												<p class="titled">${item.title}</p>
-												<p class="subd">등록날자 :${item.regdate} ${item.name}. 우선순위 ${item.sequence}</p>
+												<p class="subd">등록날자 :${item.regdate} ${item.name}. 우선순위
+													${item.sequence}
+													<form action="mod" accept-charset="utf-8" method="get"
+													class="modiform">
+													<input type="hidden" value=${item.id } name="id">													
+													<input class="modiB" type="submit" value="del" name=modi>
+												</form>
+													</p>
 											</div>
 										</li>
 									</c:if>

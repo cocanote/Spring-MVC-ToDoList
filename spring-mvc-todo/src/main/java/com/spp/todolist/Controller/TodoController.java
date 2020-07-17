@@ -1,4 +1,4 @@
-package com.spp.todolist;
+package com.spp.todolist.Controller;
 
 import java.util.ArrayList;
 
@@ -16,12 +16,8 @@ import com.spp.todolist.dto.Todo;
 import com.spp.todolist.service.TodoService;
 import com.spp.todolist.util.Constant;
 
-/**
- * Handles requests for the application home page.
- */
-
 @Controller
-@RequestMapping("/list")
+
 public class TodoController {
 
 	public JdbcTemplate template;
@@ -45,27 +41,32 @@ public class TodoController {
 		this.todoService = todoService;
 	}
 
-	@RequestMapping("/main")
+	@RequestMapping("/")
 	public String main(Model model) {
 
 		ArrayList<Todo> todolist = todoService.readTodos();
 		model.addAttribute("list",todolist);
-		for(Todo T: todolist) {
-			System.out.println(T.getTitle());
-		}		
-
 		return "main";
 	}
 	@RequestMapping(method=RequestMethod.GET,value= "/reg")
 	public String mainget(Model model ,HttpServletRequest request) {
 
 		todoService.registerTodo(request.getParameter("thing"),request.getParameter("name"),request.getParameter("sequence") );
-		return "redirect:/list/main";
+		return "redirect:/";
 	}
 
 	@RequestMapping("/adtodo")
-	public String success(Model model) {
+	public String adtodo(Model model) {
 
 		return "adtodo";
+	}
+	@RequestMapping(method=RequestMethod.GET,value= "/mod")
+	public String modifyTodo(Model model,HttpServletRequest request) {
+		
+		if(request.getParameter("modi")=="del")
+		todoService.removeTodo(request.getParameter("id"));
+		else
+		todoService.modifyTodo(request.getParameter("id"), request.getParameter("type"));
+		return "redirect:/";
 	}
 }

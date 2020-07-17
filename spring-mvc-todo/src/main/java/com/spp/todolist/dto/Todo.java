@@ -8,10 +8,8 @@ public class Todo {
 	private String type;
 	private String regdate;
 	public Todo() {
-		
-	}
 
-	
+	}
 
 	public Todo(String title, String name, int sequence, int id, String type, String regdate) {
 		super();
@@ -22,8 +20,6 @@ public class Todo {
 		this.type = type;
 		this.regdate = regdate;
 	}
-
-
 
 	public String getType() {
 		return type;
@@ -53,10 +49,6 @@ public class Todo {
 	public void setId(int id) {
 		this.id = id;
 	}
-	@Override
-	public String toString() {
-		return "Todo [title=" + title + ", name=" + name + ", sequence=" + sequence + ", id=" + id + "]";
-	}
 	public String getName() {
 		return name;
 	}
@@ -66,7 +58,11 @@ public class Todo {
 	public int getId() {
 		return id;
 	}
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Todo [title=" + title + ", name=" + name + ", sequence=" + sequence + ", id=" + id + "]";
+	}
+
+
+
 }

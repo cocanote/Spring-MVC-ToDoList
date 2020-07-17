@@ -48,4 +48,35 @@ public class TodoDao implements ITodoDao{
 		return todos;
 	}
 
+	@Override
+	public void updateTodo(final String id,final String type) {
+		String sql="UPDATE todo SET type = ? WHERE id = ?";
+		template.update(sql, new PreparedStatementSetter() {
+
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				// TODO Auto-generated method stub
+				ps.setString(1, type);
+				ps.setInt(2, Integer.parseInt(id));
+			}
+
+		});
+	}
+
+	@Override
+	public void deleteTodo(final String id) {
+		String sql="DELETE FROM todo where id = ?";
+		template.update(sql, new PreparedStatementSetter() {
+
+			@Override
+			public void setValues(PreparedStatement ps) throws SQLException {
+				// TODO Auto-generated method stub
+				ps.setInt(1,Integer.parseInt(id));
+
+			}
+		});
+
+
+	}
+
 }
